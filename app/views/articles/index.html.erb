@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h1>First Blog</h1>
+  <h3>My first Rails application for CoderSchool</h3>
+
+  <%= link_to 'New Article', new_article_path, class: "btn btn-success" %>
+  <br><br>
+  <%= render @articles %>
+</div>
