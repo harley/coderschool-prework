@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  # before_action :modify_params, only: [:create, :update]
 
   # GET /articles
   # GET /articles.json
@@ -25,6 +26,8 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
+    convert_tags
+    article_params[:time] = Time.now.getlocal('+07:00')
     @article = Article.new(article_params)
 
     respond_to do |format|
@@ -42,6 +45,8 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1.json
   def update
     respond_to do |format|
+      convert_tags
+      article_params[:time] = Time.now.getlocal('+07:00')
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
@@ -70,6 +75,14 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :body)
+      @article_params ||= params.require(:article).permit(:title, :body, :time, :tags => [])
+    end
+
+    def convert_tags
+      if article_params[:tags].kind_of?(Array)
+        article_params[:tags] = article_params[:tags].join(",")
+      else
+        article_params[:tags] = ""
+      end
     end
 end

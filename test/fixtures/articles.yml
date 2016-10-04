@@ -2,8 +2,12 @@
 
 one:
   title: MyString
-  body: MyText
+  body: MyString
+  time: 2016-10-04 09:48:37
+  tags: MyString
 
 two:
   title: MyString
-  body: MyText
+  body: MyString
+  time: 2016-10-04 09:48:37
+  tags: MyString
