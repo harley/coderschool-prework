@@ -29,6 +29,9 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 # Red carpet markdown
 gem 'redcarpet', '2.3.0'
 
+# Select 2
+gem "select2-rails"
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
