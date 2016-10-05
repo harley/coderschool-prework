@@ -14,10 +14,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require select2
-//= require select2_locale_pt-BR
 //= require_tree .
-//= require jquery
-//= require jquery_ujs
 $(document).ready(function() {
   $("#article_tags").select2({tags:true});
 });
