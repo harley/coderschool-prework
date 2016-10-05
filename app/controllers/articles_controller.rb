@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  impressionist :actions=>[:show,:index]
   # before_action :modify_params, only: [:create, :update]
 
   # GET /articles
