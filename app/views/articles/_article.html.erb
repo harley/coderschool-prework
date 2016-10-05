@@ -6,6 +6,7 @@
           <p class="card-text"><%= @markdown.render(article.body).html_safe %></p>
           <!-- Comment area -->
           <h2><%= article.comments.count %> Comments</h2>
+          <h2><%= article.impressionist_count(:filter=>:session_hash) %> View </h2>
 
           <div class="card-footer">
             <%= link_to 'View', article_path(article), class: "btn btn-success" %>
