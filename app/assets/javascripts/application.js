@@ -11,10 +11,6 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
-//= require select2
+//= require select2-full
 //= require_tree .
-$(document).ready(function() {
-  $("#article_tags").select2({tags:true});
-});

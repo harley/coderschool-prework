@@ -29,14 +29,13 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 # Red carpet markdown
 gem 'redcarpet', '2.3.0'
 
-# Select 2
-gem "select2-rails"
-
 # Impressionist
 gem 'impressionist'
 
 # Font awesome
 gem "font-awesome-rails"
+
+gem "select2-rails"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
