@@ -1,37 +1,16 @@
-<%= form_for(comment) do |f| %>
-  <% if comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-      <ul>
-      <% comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="box-footer">  
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <!-- .img-push is used to add margin to elements next to floating images -->
+  <div class="img-push">
+    <div class="col-sm-2">
+      <%= f.text_field :username, class: "form-control input-sm", placeholder: "Username" %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_field :body %>
-  </div>
-
-  <div class="field">
-    <%= f.label :time %>
-    <%= f.datetime_select :time %>
-  </div>
-
-  <div class="field">
-    <%= f.label :article_id %>
-    <%= f.text_field :article_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+    <div class="col-sm-8">
+      <%= f.text_field :body, class: "form-control input-sm", placeholder: "Write a comment" %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.submit 'Send', :class => "btn btn-danger pull-right btn-block" %>
+    </div>
   </div>
 <% end %>
+</div>

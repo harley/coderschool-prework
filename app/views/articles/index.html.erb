@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 <div class="container">
 	<nav class="navbar navbar-light bg-faded">
 	  <a class="navbar-brand" href="#">First blog</a>
@@ -11,15 +11,15 @@
 	    </li>
 	  </ul>
 	  <form class="form-inline pull-xs-right">
-	    <input class="form-control" type="text" placeholder="Search">
-	    <button class="btn btn-outline-success" type="submit">Search</button>
+	    <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
+		<%= submit_tag "Search", :name => nil, :class => "btn btn-outline-success" %>
 	  </form>
 	</nav>
 </div>
 <br>
 <div class="container">
 
-  <%= link_to '', new_article_path, class: "btn btn-success fa fa-plus" %>
+  <%= link_to '', new_article_path, class: "btn btn-success btn-sm fa fa-plus" %>
   <br><br>
   <%= render @articles %>
 </div>

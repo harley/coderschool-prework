@@ -2,16 +2,29 @@
   <div class="col-sm-8">
       <div class="card">
         <div class="card-block">
+          <!-- post text -->
           <h4 class="card-title"><%= article.title %></h4>
+
           <p class="card-text"><%= @markdown.render(article.body).html_safe %></p>
-          <!-- Comment area -->
-          <h2><%= article.comments.count %> Comments</h2>
-          <h2><%= article.impressionist_count(:filter=>:session_hash) %> View </h2>
+          <br>
+          <% if article.tags.is_a? String %>
+            <strong for="tags">Tags:</strong>
+            <% arr = ["danger", "success", "warning", "info"] %>
+            <% article.tags.split(",").each.with_index do |tag, index| %>
+              <% tag_type = arr[index%4] %>
+              <span class="label label-<%= tag_type %>"><%= tag %> </span>
+            <% end %>
+          <% end %>
+          <span class="pull-right text-muted">
+            <%= article.impressionist_count(:filter=>:session_hash) %>  <i class="fa fa-eye"></i>
+            <%= article.comments.count %> <i class="fa fa-comments-o"></i>
+          </span>
+          <br><br>
 
           <div class="card-footer">
-            <%= link_to 'View', article_path(article), class: "btn btn-success" %>
-            <%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
-            <%= link_to 'Delete', article, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+            <%= link_to 'View', article_path(article), class: "btn btn-sm btn-success" %>
+            <%= link_to 'Edit', edit_article_path(article), class: "btn btn-sm btn-warning" %>
+            <%= link_to 'Delete', article, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm btn-danger" %>
           </div>
         </div>
       </div>

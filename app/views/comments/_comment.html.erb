@@ -1,0 +1,17 @@
+<!-- /.box-body -->
+<div class="box-footer box-comments">
+  <div class="box-comment">
+    <!-- User image -->
+    <%= image_tag("unknown_user.png", alt: "User Image", class: "img-circle img-sm") %>
+
+    <div class="comment-text">
+          <span class="username">
+            <%= comment.username %>
+            <span class="text-muted pull-right"><%= comment.created_at.strftime("%d-%m-%Y %H:%M") %></span>
+          </span><!-- /.username -->
+      <%= comment.body %>
+    </div>
+    <!-- /.comment-text -->
+  </div>
+  <!-- /.box-comment -->
+</div>
