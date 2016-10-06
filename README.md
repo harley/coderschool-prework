@@ -4,7 +4,7 @@
 
 Submitted by: **Nguyen Hoang Tu**
 
-Time spent: **15** hours spent in total
+Time spent: **20** hours spent in total
 
 URL: **hoangtu-firstblog.herokuapp.com**
 
@@ -17,14 +17,14 @@ The following **required** functionality is complete:
 * [x] There is one post that introduces the App Creator with name, picture.
 * [x] User can delete stories, with an alert that asks the user to confirm.
 * [x] User see a search form on the Posts page.
-* [ ] User can submit a search term to find all posts bywith titles containing the search term.
+* [x] User can submit a search term to find all posts bywith titles containing the search term.
 
 The following **optional** features are implemented:
 * [x] There is a "navbar" that is responsive to window size similar to http://v4-alpha.getbootstrap.com/examples/navbar/. 
 * [x] User can see how many views a post has. 
 * [x] User can leave a comment on a post.
 * [x] User can add "tags" to a post
-* [ ] User can filter posts by tag. 
+* [x] User can filter posts by tag. 
 
 The following **additional** features are implemented:
 
@@ -34,7 +34,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](/path/to/your/gif/file)
+![Video Walkthrough](http://i.imgur.com/wPTHWDB.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
